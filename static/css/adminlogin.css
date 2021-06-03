@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body {
+
+	height: 100%;
+	width: 100%;
+}
+.container-fluid {
+	height: 100%;
+	padding: 0 !important;
+}
+
+body {
+  background-image: url(../background/admin-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 99%;
+  backdrop-filter: contrast(60%) brightness(80%);
+ 
+  /* filter: opacity(); */
+  
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.frm {
+  margin-top: 20%;
+  background-color: black;
+  height: 20em !important;
+  width: 25em;
+
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+form input {
+  width: 80%;
+  height: 35px;
+  margin: 5px;
+  padding: 10px;
+  background: none;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  transition: border 0.3s;
+}
+
+form input::placeholder {
+  color: #fff;
+}
+
+form input:focus {
+  border-bottom: 1px solid #8c00ff;
+}
+h6{
+    color: rgb(223, 223, 223);
+    width: 80%;
+    height: 50px;
+    margin: 5px;
+    margin-top: 2px;
+    padding: 10px;
+}
+form button {
+  width: 55%;
+  height: 40px;
+  margin-top: 20px;
+  background: #8c00ff;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 1px #8c00ff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  transform: scale(1.05);
+  box-shadow: 1px 1px 2px #8c00ff;
+}

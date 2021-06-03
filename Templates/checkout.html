@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Parking-Check Out</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="../static/css/checkout.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+
+</head>
+
+<body class="">
+    <div class="container-fluid ">
+        <h5>
+            <a href="{{url_for('driverlogout')}}"> Log Out </a>
+        </h5>
+        <div class="row d-flex justify-content-center ">
+            <div class="card col-lg-8 ">
+                <div class="card-header">
+                    <h5>Parking Details</h5>
+                </div>
+                <div class="card-body  ">
+                    <h6>
+                        <div>Ticket : {{pdata.ticket}}</div>
+                        <div>Driver's Name : {{pdata.first_name}} </div>
+                        <div>Vehicle Number :{{ pdata.plate_no}} </div>
+                        <div>Vehicle Modal :  {{pdata.vehicle_model}} </div>
+                        <div>Company :  {{pdata.company}} </div>
+                    </h6>
+                </div>
+
+            </div>
+        
+            <div class="card col-lg-8 ">
+                <div class="card-header">
+                    <h5>Payment</h5>
+
+                </div>
+                <div class="card-body ">
+                    <h6>
+                        <div>Time in : {{pdata.time_in}} </div>
+                        <div>Time Out :  {{pdata.time_out}} </div>
+                        <div>Duration :{{ ydata.duration}} minutes </div>
+                        <div>Charge : Rs.{{ydata.charges}} </div>
+                    </h6>
+                </div>
+            </div>
+        </div>
+        <form action="" method="POST" >
+            <div class="form-group form-inline d-flex justify-content-center ">
+                {% if pay_status== "Pay" %}
+                <button class="btn btn-dark  form-control " type="submit" value="{{pay_status}}" name="status">{{pay_status}}</button>
+                {% else %} 
+                <button class="btn btn-dark  form-control " type="submit" value="{{pay_status}}" name="status" disabled>{{pay_status}}</button>
+                {% endif %}
+
+            </div>
+        </form>
+
+    </div>
+
+</body>
+
+</html>

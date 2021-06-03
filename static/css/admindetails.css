@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html,body {
+  
+      height: 100%;
+      width: 100%;
+  }
+  .container-fluid {
+      /* height: 100%; */
+      padding: 0 !important;
+  }
+  .card{	
+    border-width: 1px !important;
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05) !important;
+    margin: 1%;
+    padding: 0 !important;
+    }
+    .card-header{	
+        background-color: white !important;
+        color: #099 !important;
+        }
+  .table-2 th,.table-2 td{	
+    padding: 0 3.0em 1em 0  !important;
+    white-space: nowrap;
+    
+    }
+    .table-2 {
+    width: 100px !important;
+    justify-content:center !important;
+    }
+    div.dataTables_wrapper {
+        width: 800px;
+        margin: 1% 2.5%;
+    }
+button.form-control{
+    width: 90px;
+    height: 40px;
+    color: beige;
+
+    border: 0 transparent;
+    background-color: #099;
+}
+button.form-control:hover ,button.form-control:focus ,button.form-control:active {
+    background-color: aquamarine !important;
+    color: black !important;
+    box-shadow: none !important;
+}
+i{
+    color: black;
+   margin:  1px auto;
+    font-size: 18px;
+}
+    

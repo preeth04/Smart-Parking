@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Admin-Parking</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="../static/css/admindetails.css">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css"  crossorigin="anonymous">
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+    
+    
+    
+</head>
+
+<body>
+    <script type="text/javascript">
+        
+        $(document).ready(function() {
+            $('#parking1').DataTable( {
+                "sAutoWidth": false,
+                "searching": false,
+                "ordering": false,
+                "paging": false,
+                "info": false
+            } );
+            $('#parking2').DataTable( {
+                "searching": false,
+                "ordering": false,
+                "paging": false,
+                "info":false
+                } );
+                $("form").submit(function(e){
+                    // e.preventDefault();
+                    var v = $("button").val();
+                    alert(v); 
+                });
+            } );
+            
+            
+            
+            
+        </script>
+        <div class="container-fluid   ">
+            <div class="  flex-column" >
+                <h5>{{ session.admin }}</h5>
+                <h5>
+                    <a href="{{url_for('adminlogout')}}">
+                        Log Out
+
+                    </a>
+                </h5>
+                
+                <div class="  row d-flex justify-content-center align-items-center col-lg-12 "  >
+                    <div class="card col-lg-10">
+                        <div class="card-header">
+                            <h5>Parking Details</h5>
+                            
+                        </div>
+                        <div class="card-body ">
+                            <div class="pt-2 "style="overflow-x:auto;">
+                                <table id="parking1" class="table-2  table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Vehicle No</th>
+                                            <th>Model</th>
+                                            <th>Parking Id</th>
+                                            <th>Time In</th>
+                                            <th>Time Out</th>
+                                            <th>Check Out Request</th>
+                                            
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for data in parkdata %}
+                                        <tr> 
+                                            <td >{{data.id}}</td>
+                                            <td >{{data.first_name}} </td>
+                                            <td >{{data.plate_no}}</td>
+                                            <td >{{data.company}}</td>
+                                            <td >{{data.ticket}}</td> 
+                                            <td >{{data.time_in}}</td>
+                                            <td >{{data.time_out}}</td>
+                                            
+                                            <td >
+                                                <form action="" method="POST">
+                                                    <button class="btn btn-dark  form-control " type="submit" name="park" value="{{data.ticket }}">
+                                                        <i class="fas fa-chevron-right"></i> </button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                            {%endfor%}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                    <div class=" row  d-flex justify-content-center align-items-center col-lg-12 " >
+                        <div class="card col-lg-10">
+                            <div class="card-header">
+                                <h5>Payment Details</h5>
+                            </div>
+                            <div class="card-body ">
+                                <div class="pt-2 " style="overflow-x:auto;">
+                                    
+                                    
+                                    <table id="parking2" class="table-2  table-borderless">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Name</th>
+                                                <th>Vehicle No</th>
+                                                <th>Model</th>
+                                                <th>Parking Id</th>
+                                                <th>Duration</th>
+                                                <th>Charge</th>
+                                                <th>Payment Status</th>
+                                                <th>Payment Request</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for data in paydata %}
+                                            <tr> 
+                                                <td >{{data.id}}</td>
+                                                <td >{{data.first_name}} </td>
+                                                <td >{{data.plate_no}}</td>
+                                                <td >{{data.company}}</td>
+                                                <td >{{data.ticket }}</td> 
+                                                <td >{{data.duration }}</td>
+                                                <td >{{data.charges}}</td>
+                                                <td >{{data.status }}</td>
+                                                <td >
+                                                    <form action="" method="POST">
+                                                        <button class="btn btn-dark  form-control " type="submit"  name="pay" value="{{data.ticket }}">
+                                                            <i class="fas fa-chevron-right"></i> </button>
+                                                        </form>
+                                                    </td>
+                                                    
+                                                </tr>
+                                                {%endfor%}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+                
+            </body>
+            
+            </html>

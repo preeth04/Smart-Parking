@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Park Your Car-Vehicle</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="{{ url_for('static',filename='css/vehicle_detail.css')}}">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
+</head>
+<body class="d-flex align-items-center" >
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+        <div class=" row diagonal-box">
+            <div class="content  col-12">
+                
+                <div class=" header-content d-flex justify-content-center">
+                  Vehicle Details
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row col-md-6 card  ">
+            
+                <div class="card-header d-flex justify-content-center"><h3>Enter Vehicle details</h3></div>
+                <div class="card-body  ">
+                <form action="" method="POST"  >
+                    <div class="form-group row  offset-1">
+                        <label for="company" class="col-sm-5">Company</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control " id="company"  name="f_company" required >
+                        </div>
+                    </div>
+               
+                    <div class="form-group row  offset-1">
+                        <label for="plate_no" class="col-sm-5">Plate No</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control " id="plate_no" name="f_plate_no" required>
+                        </div>
+                    </div>
+                   
+                    <div class="form-group row  offset-1 ">
+                        <label for="model" class="col-sm-5">Type Of Vehicle</label>
+                        <div class="col-sm-6">
+                            <select class="form-control" id="model" name="f_model"  required>
+                                <option value="" selected disabled hidden>Select </option> 
+                                <option  value="electric-Bike" >Electric Bike</option>
+                                <option  value="two-Wheeler" >Two Wheeler</option>
+                                <option  value="sedan" >Sedan</option>
+                                <option  value="suv" >SUV</option>
+                                <option  value="minivan" >Minivan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-inline d-flex justify-content-center ">
+                      
+                        <button class="btn btn-light  form-control " type="submit" value="submit">Submit</button>
+                        <button class="btn btn-light  form-control " type="reset" value="reset">Reset</button>
+                    </div>
+                    
+                
+                </form>
+        </div>
+           
+        
+        </div>
+    </div>
+</body>
+</html>
